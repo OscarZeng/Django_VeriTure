@@ -1,0 +1,39 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    Certificate Viewer
+{% endblock %}
+
+
+{% block content %}
+
+        <div class="issuer-logo">
+            <img src="{{ config.ISSUER_LOGO_PATH }}"/>
+        </div>
+
+        <div class="intro-title">
+            <h1>{{ config.ISSUER_NAME }}</h1>
+        </div>
+
+
+        <div class="intro-text">
+            The certificate viewer is the website for you to check all your existing
+            certificates, display existing certificates and verifying all them
+        </div>
+
+
+
+    <div class="recently-issued">
+        {% if config.RECENT_CERT_IDS %}
+            <div class="recent-title">
+                <h1>Recently Issued</h1>
+            </div>
+            {% for cert_id in config.RECENT_CERT_IDS %}
+                <!--<a href="/{{ cert_id }}">{{ cert_id }}</a> <br>-->
+                <a href="{{ cert_id }}">{{ cert_id }}</a> <br>
+            {% endfor %}
+        {% endif %}
+    </div>
+
+
+{% endblock %}

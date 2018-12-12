@@ -21,9 +21,12 @@
             {% if not user.is_authenticated %}
             {% url "account_login" as login_url %}
             {% url "account_signup" as signup_url %}
-            <p class="mb-5 lead">{% blocktrans %}You can <a href="{{ login_url }}" class="btn btn-secondary">Log In</a> or <a href="{{ signup_url }}" class="btn btn-primary">Sign Up</a> to try out the site.{% endblocktrans %}</p>
+            <p class="mb-5 lead">{% blocktrans %}You can <a href="{{ login_url }}" class="btn btn-primary">Log In</a> or <a href="{{ signup_url }}" class="btn btn-primary">Sign Up</a> to try out the site.{% endblocktrans %}</p>
+            {% elif user.is_authenticated%}
+
+            <p class="mb-5 lead">{% blocktrans %}Welcome!{{user.name}} Now you can <a href="/certviewer" class="btn btn-primary">View Certificates</a>{% endblocktrans %}</p>
             {% endif %}
-            <img src="https://static.wixstatic.com/media/5f84d8_caac524a8c7f47efa01c39e494d1cd5b~mv2.png/v1/fill/w_248,h_104,al_c,q_80,usm_0.66_1.00_0.01/%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202018-07-30%20%E4%B8%8B%E5%8D%882_35_24%E6%8B%B7%E8%B2%9D.webp" />
+            <img src="https://cdn.evbuc.com/images/39531392/103177740619/1/logo.jpg" />
         </div>
     </section>
     <section id="content-section">

@@ -16,6 +16,7 @@ DATABASES = {
 
 ALLOWED_HOSTS = [
     "localhost",
+    "127.0.0.1"
 ]
 
 # Local time zone for this installation. Choices can be found here:
@@ -137,11 +138,15 @@ INSTALLED_APPS = [
 
     # external
     "account",
+    "pinax.testimonials",
     "pinax.eventlog",
     "pinax.webanalytics",
 
     # project
     "Django_VeriTure",
+
+    # Defined Apps
+    "certviewer.apps.CertviewerConfig"
 ]
 
 ADMIN_URL = "admin:index"
