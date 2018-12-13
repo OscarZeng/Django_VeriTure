@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends 'layout.html' %}
+<head>
+    <meta charset="UTF-8">
+    <title>Upload Certificates</title>
+</head>
+
+<body>
+<p>
+
+</p>
+<div clsss="container">
+<div class="jumbotron" style="padding-top: 5px; padding-bottom: 15px">
+	    <form id = 'input' method='post' action='/upload'  class="form-signin" enctype="multipart/form-data">
+                    <input type="file" name="cert_json" id="cert_json" class="form-control"  placeholder="cert_json" required autofocus>
+		    <p> </p>
+		    <p> </p>
+                    <input type="submit" value="Verify">
+            </form>
+</div>
+</div>
+
+</body>
+</html>

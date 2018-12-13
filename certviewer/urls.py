@@ -22,4 +22,6 @@ urlpatterns = [
 
     path('spec', views.spec, name='spec'),
 
+    path('upload', views.upload, name='upload')
+
 ]

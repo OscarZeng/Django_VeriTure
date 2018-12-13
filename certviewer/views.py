@@ -53,3 +53,7 @@ def issuer(request):
 def spec(request):
     context = {'title': "spec"}
     return render(request, 'dummy.html', context)
+
+
+def upload(request):
+    return render(request, 'upload.html')
