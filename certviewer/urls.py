@@ -1,10 +1,12 @@
 from django.urls import path
+from django.conf.urls import url
+
 from . import views
 
 urlpatterns = [
     path('', views.homepage, name='homepage'),
 
-    path('certificate_uid', views.award, name='award'),
+    url(r'^(?P<certificate_uid>[0-9]+)$', views.award, name='award'),
 
     path('certificate/certificate_uid', views.json_award, name='json_award'),
 

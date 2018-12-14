@@ -1,18 +1,17 @@
 from django.shortcuts import render
-from django.http import HttpResponse
-from django.template import loader
+from django.http import Http404
+
+from .models import Certificate
 
 
 def homepage(request):
-    #template = loader.get_template('./templates/user.html')
-    #return HttpResponse (template.render(request))
-    messages = {'title': "homepage"}
-    return render (request, 'index.html', messages)
+    all_certificates = Certificate.objects.all()
+    return render(request, 'certviewer_index.html', {'certs': all_certificates})
 
 
-def award(request):
-    context = {'title': "award"}
-    return render(request, 'award.html', context)
+def award(request, certificate_uid):
+    award = Certificate.objects.get(issuerID=certificate_uid )
+    return render(request, 'award.html', {'award':award})
 
 
 def json_award(request):

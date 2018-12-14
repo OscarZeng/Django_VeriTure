@@ -24,7 +24,7 @@
             <p class="mb-5 lead">{% blocktrans %}You can <a href="{{ login_url }}" class="btn btn-primary">Log In</a> or <a href="{{ signup_url }}" class="btn btn-primary">Sign Up</a> to try out the site.{% endblocktrans %}</p>
             {% elif user.is_authenticated%}
 
-            <p class="mb-5 lead">{% blocktrans %}Welcome!{{user.name}} Now you can <a href="/certviewer" class="btn btn-primary">View Certificates</a>{% endblocktrans %}</p>
+            <p class="mb-5 lead">{% blocktrans %}Welcome!{{request.user.username}} Now you can <a href="/certviewer" class="btn btn-primary">View Certificates</a>{% endblocktrans %}</p>
             {% endif %}
             <img src="https://dev.veritrue.io/_themes/default/img/veritrue_logo.png" />
         </div>

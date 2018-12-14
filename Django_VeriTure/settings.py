@@ -138,7 +138,6 @@ INSTALLED_APPS = [
 
     # external
     "account",
-    "pinax.testimonials",
     "pinax.eventlog",
     "pinax.webanalytics",
 

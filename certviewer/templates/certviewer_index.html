@@ -25,13 +25,13 @@
 
 
     <div class="recently-issued">
-        {% if config.RECENT_CERT_IDS %}
+        {% if certs %}
             <div class="recent-title">
-                <h1>Recently Issued</h1>
+                <h1>Your Certificates</h1>
             </div>
-            {% for cert_id in config.RECENT_CERT_IDS %}
+            {% for cert_id in certs %}
                 <!--<a href="/{{ cert_id }}">{{ cert_id }}</a> <br>-->
-                <a href="{{ cert_id }}">{{ cert_id }}</a> <br>
+                <a href="{{ cert_id.issuerID }}">{{ cert_id }}</a> <br>
             {% endfor %}
         {% endif %}
     </div>

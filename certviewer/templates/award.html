@@ -8,6 +8,9 @@
 
     <!-- Award -->
     {% block award %}
+        <div class = "issuser-owner">
+            <h1> {{award.account}}</h1>
+        </div>
         <div class="issuer-logo">
             <img src="{{ award.logoImg }}"/>
         </div>
@@ -39,9 +42,9 @@
             blockchain.</p>
         <button id="verify-button" value="{{ verification_info }}">Verify certificate</button>
 
-        <span id="verified" class="verified"><img id="verified-icon" src="{{ theme_static('img/verified.png') }}"> Verified </span>
+        <span id="verified" class="verified"><img id="verified-icon"  src="/static/img/verified.png"> Verified </span>
         <span id="not-verified" class="not-verified"><img id="not-verified-icon"
-                                                          src="{{ theme_static('img/not-verified.png') }}"> Not Verified </span>
+                                                          src="/static/img/not-verified.png "> Not Verified </span>
     </div>
 
     <div>
