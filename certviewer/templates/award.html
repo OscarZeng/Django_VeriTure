@@ -9,24 +9,24 @@
     <!-- Award -->
     {% block award %}
         <div class = "issuser-owner">
-            <h1> {{award.account}}</h1>
+            <h1>Owner: {{award.account}}</h1>
         </div>
         <div class="issuer-logo">
-            <img src="{{ award.logoImg }}"/>
+            <img src="{{ award.logoImg.url }}"/>
         </div>
 
         <div class="certificate-owner">
-            <h1>{{ award.name }}</h1>
+            <h1>Name: {{ award.name }}</h1>
         </div>
 
         <div class="certificate-meta">
-            <span class="certificate-name">{{ award.title }}</span>
-            <span class="issuer-name">{{ award.organization }}</span>
-            <span class="date-span">{{ award.subtitle }}</span>
+            <span class="certificate-name">Title: {{ award.title }}</span>
+            <span class="issuer-name">Organization: {{ award.organization }}</span>
+            <span class="date-span">Subtitle: {{ award.subtitle }}</span>
         </div>
 
         <div class="certificate-description">
-            <p>{{ award.text }}</p>
+            <p>Text: {{ award.text }}</p>
         </div>
 
         {% if award.signatureImg %}

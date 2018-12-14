@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-{% extends 'layout.html' %}
 <head>
     <meta charset="UTF-8">
     <title>Upload Certificates</title>
 </head>
 
 <body>
-<p>
+        {% block css %}
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
-</p>
+        {% endblock %}
+<h1>
+Please Upload your certificate here:
+</h1>
 <div clsss="container">
 <div class="jumbotron" style="padding-top: 5px; padding-bottom: 15px">
 	    <form id = 'input' method='post' action='/upload'  class="form-signin" enctype="multipart/form-data">
