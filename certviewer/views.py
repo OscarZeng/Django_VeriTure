@@ -56,7 +56,7 @@ def spec(request):
 
 
 def upload(request):
-    form = JsonCertificateForm(request.POST or None)
+    form = JsonCertificateForm(request.POST or None, request.FILES or None)
     if form.is_valid():
         instance = form.save(commit=False)
         instance.save()
