@@ -26,5 +26,5 @@ class Certificate (models.Model):
 
 
 class JsonCertificate (models.Model):
-    json = models.FileField()
+    json = models.FileField(null=True, blank=True)
 

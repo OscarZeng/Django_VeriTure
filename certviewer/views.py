@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import Http404
 
 from .models import Certificate
+from .forms import JsonCertificateForm
 
 
 def homepage(request):
@@ -10,8 +11,8 @@ def homepage(request):
 
 
 def award(request, certificate_uid):
-    award = Certificate.objects.get(issuerID=certificate_uid )
-    return render(request, 'award.html', {'award':award})
+    award = Certificate.objects.get(issuerID=certificate_uid)
+    return render(request, 'award.html', {'award': award})
 
 
 def json_award(request):
@@ -55,4 +56,11 @@ def spec(request):
 
 
 def upload(request):
-    return render(request, 'upload.html')
+    form = JsonCertificateForm(request.POST or None)
+    if form.is_valid():
+        instance = form.save(commit=False)
+        instance.save()
+    context = {
+        "form": form,
+    }
+    return render(request, 'upload.html', context)

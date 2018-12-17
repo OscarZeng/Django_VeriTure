@@ -15,9 +15,9 @@ Please Upload your certificate here:
 </h1>
 <div clsss="container">
 <div class="jumbotron" style="padding-top: 5px; padding-bottom: 15px">
-	    <form id = 'input' method='post' action='/upload'  class="form-signin" enctype="multipart/form-data">
-                    <input type="file" name="cert_json" id="cert_json" class="form-control"  placeholder="cert_json" required autofocus>
-		    <p> </p>
+	    <form method="POST" action=""> {% csrf_token%}
+            {{form.as_p}}
+            <p> The certificate is the json file</p>
 		    <p> </p>
                     <input type="submit" value="Verify">
             </form>
