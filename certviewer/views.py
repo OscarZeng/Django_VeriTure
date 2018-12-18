@@ -2,17 +2,25 @@ from django.shortcuts import render
 from django.http import Http404
 
 from .models import Certificate
+from .models import JsonCertificate
 from .forms import JsonCertificateForm
+
+from cert_core.cert_model import model
 
 
 def homepage(request):
     all_certificates = Certificate.objects.all()
-    return render(request, 'certviewer_index.html', {'certs': all_certificates})
+    all_json_certificates = JsonCertificate.objects.all()
+    return render(request, 'certviewer_index.html', {'certs': all_certificates, 'jsoncerts': all_json_certificates})
 
 
-def award(request, certificate_uid):
+def display_award(request, certificate_uid):
     award = Certificate.objects.get(issuerID=certificate_uid)
-    return render(request, 'award.html', {'award': award})
+    #award(certificate_uid)
+    #json_award = JsonCertificate.objects.get(issuerID=certificate_uid)
+    #award = model.to_certificate_model(json_award.json)
+    print(award)
+    return render(request, 'award.html', {"award": award}) #award(certificate_uid))
 
 
 def json_award(request):
@@ -21,7 +29,7 @@ def json_award(request):
 
 
 def verify_award(request):
-    context = {'title': "verify_award"}
+
     return render(request, 'dummy.html', context)
 
 
@@ -36,8 +44,7 @@ def request(request):
 
 
 def faq(request):
-    context = {'title': "faq"}
-    return render(request, 'faq.html', context)
+    return render(request, 'faq.html')
 
 
 def bitcoinkeys(request):

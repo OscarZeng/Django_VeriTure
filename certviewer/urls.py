@@ -8,11 +8,11 @@ from . import views
 urlpatterns = [
     path('', views.homepage, name='homepage'),
 
-    url(r'^(?P<certificate_uid>[0-9]+)$', views.award, name='award'),
+    url(r'^(?P<certificate_uid>[0-9]+)$', views.display_award, name='award'),
 
     path('certificate/certificate_uid', views.json_award, name='json_award'),
 
-    path('verify/certificate_uid', views.verify_award, name='verify_award'),
+    url(r'verify/^(?P<certificate_uid>[0-9]+)$', views.verify_award, name='verify_award'),
 
     path('intro', views.intro, name='intro'),
 

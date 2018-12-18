@@ -8,3 +8,5 @@ suitable for most sites that have user accounts.
 """
 
 default_app_config = "Django_VeriTure.apps.AppConfig"
+
+print("the Django_VeriTure init has been called")

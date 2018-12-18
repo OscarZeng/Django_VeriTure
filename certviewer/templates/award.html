@@ -6,18 +6,13 @@
 
 {% block content %}
 
-    <form method="POST" action=""> {% csrf_token%}
-            {{form.as_p}}
-            <p> The certificate is the json file</p>
-		    <p> </p>
-    </form>
     <!-- Award -->
     {% block award %}
         <div class = "issuser-owner">
             <h1>Owner: {{award.account}}</h1>
         </div>
         <div class="issuer-logo">
-            <img src="{{ award.logoImg.url }}"/>
+            <img src="{{ award.logoImg }}"/>
         </div>
 
         <div class="certificate-owner">
