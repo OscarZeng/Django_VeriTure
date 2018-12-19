@@ -15,16 +15,14 @@ def homepage(request):
 
 
 def display_award(request, certificate_uid):
-    # award = Certificate.objects.get(issuerID=certificate_uid)
-    # print(certificate_uid)
+    # from . import cert_store
+    # award = cert_store.get_certificate(certificate_uid)
+    # print(award)
 
-    # json_award = JsonCertificate.objects.get(issuerID=certificate_uid)
-    # award = model.to_certificate_model(json_award.json)
-
-    from . import cert_store
-    award = cert_store.get_certificate(certificate_uid)
-    print(award)
-    return render(request, 'award.html', {"award": award}) #award(certificate_uid))
+    from certviewer.certificate_store_bridge import award
+    Award = award(certificate_uid)
+    print(Award)
+    return render(request, 'award.html', award(certificate_uid))#{"award": Award}) #award(certificate_uid))
 
 
 def json_award(request):

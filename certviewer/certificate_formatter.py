@@ -1,6 +1,6 @@
 from . import helpers
 from cert_core import BlockchainType
-from .models import Certificate
+
 # Generate the Object "award" according to the certificate information given
 
 

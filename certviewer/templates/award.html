@@ -8,38 +8,27 @@
 
     <!-- Award -->
     {% block award %}
-        <div class = "issuser-owner">
-            <h1>Owner: {{award.title}}</h1>
-        </div>
         <div class="issuer-logo">
-            <img src="{{ award.badges }}"/>
+            <img src="{{ award.logoImg }}"/>
         </div>
 
         <div class="certificate-owner">
-            <h1>Name: {{ award.name }}</h1>
-        </div>
-
-        <div class="certificate-description">
-            <h2>Description: {{ award.description }}</h2>
-        </div>
-
-        <div class="certificate-issued_on">
-            <h2>IssuedOn: {{ award.issued_on }}</h2>
+            <h1>{{ award.name }}</h1>
         </div>
 
         <div class="certificate-meta">
-            <span class="certificate-name">Title: {{ award.title }}</span>
-            <span class="issuer-name">Organization: {{ award.organization }}</span>
-            <span class="date-span">Subtitle: {{ award.subtitle }}</span>
+            <span class="certificate-name">{{ award.title }}</span>
+            <span class="issuer-name">{{ award.organization }}</span>
+            <span class="date-span">{{ award.subtitle }}</span>
         </div>
 
         <div class="certificate-description">
-            <p>Text: {{ award.text }}</p>
+            <p>{{ award.text }}</p>
         </div>
 
-        {% if award.signature_image %}
+        {% if award.signatureImg %}
             <div class="certificate-signature">
-                <img src="{{ award.signature_image }}" id="signature-img" alt="Signature"/>
+                <img src="{{ award.signatureImg }}" id="signature-img" alt="Signature"/>
             </div>
         {% endif %}
 
@@ -48,16 +37,12 @@
     <div class="verify">
         <p>This certificate was digitally signed by {{ award.organization }} and registered on the <span class="chain">{{ award.chain }}</span>
             blockchain.</p>
-        <button id="verify-button" value="/verifier/{{certificate_uid}}">Verify certificate</button>
+        <button id="verify-button" value="{{ verification_info }}">Verify certificate</button>
 
-        <span id="verified" class="verified"><img id="verified-icon"  src="/static/img/verified.png"> Verified </span>
+        <span id="verified" class="verified"><img id="verified-icon" src="{{ 'img/verified.png' }}"> Verified </span>
         <span id="not-verified" class="not-verified"><img id="not-verified-icon"
-                                                          src="/static/img/not-verified.png "> Not Verified </span>
+                                                          src="{{ 'img/not-verified.png' }}"> Not Verified </span>
     </div>
-
-    <div  class="verification information">
-        <p>{{verification_info}}</p>>
-    </div>>
 
     <div>
         <h6 id="progress-msg"></h6>

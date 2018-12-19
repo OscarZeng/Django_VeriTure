@@ -1,6 +1,5 @@
-from .models import Certificate
 from .models import JsonCertificate
-from cert_core import cert_store
+from . import cert_store
 from . import certificate_formatter
 
 
