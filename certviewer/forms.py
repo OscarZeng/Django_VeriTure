@@ -8,6 +8,7 @@ class JsonCertificateForm(forms.ModelForm):
     class Meta:
         model = JsonCertificate
         fields = [
+            "issuerID",
             "json"
         ]
 

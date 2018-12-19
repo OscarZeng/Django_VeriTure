@@ -8,11 +8,14 @@ from . import views
 urlpatterns = [
     path('', views.homepage, name='homepage'),
 
-    url(r'^(?P<certificate_uid>[0-9]+)$', views.display_award, name='award'),
+    path('upload', views.upload, name='upload'),
 
-    path('certificate/certificate_uid', views.json_award, name='json_award'),
+    # url(r'^(?P<certificate_uid>[str]+)$', views.display_award, name='award'),
+    path('<certificate_uid>', views.display_award, name='award'),
 
-    url(r'verify/^(?P<certificate_uid>[0-9]+)$', views.verify_award, name='verify_award'),
+    path('certificate/<certificate_uid>', views.json_award, name='json_award'),
+
+    path('verify/<certificate_uid>', views.verify_award, name='verify_award'),
 
     path('intro', views.intro, name='intro'),
 
@@ -24,9 +27,8 @@ urlpatterns = [
 
     path('issuer/issuer_file', views.issuer, name='issuer'),
 
-    path('spec', views.spec, name='spec'),
+    path('spec', views.spec, name='spec')
 
-    path('upload', views.upload, name='upload')
 
 ]
 

@@ -16,10 +16,10 @@ def homepage(request):
 
 def display_award(request, certificate_uid):
     award = Certificate.objects.get(issuerID=certificate_uid)
+    print(certificate_uid)
     #award(certificate_uid)
     #json_award = JsonCertificate.objects.get(issuerID=certificate_uid)
     #award = model.to_certificate_model(json_award.json)
-    print(award)
     return render(request, 'award.html', {"award": award}) #award(certificate_uid))
 
 
@@ -28,9 +28,12 @@ def json_award(request):
     return render(request, 'award.html', context)
 
 
-def verify_award(request):
-
-    return render(request, 'dummy.html', context)
+def verify_award(request, certificate_uid):
+    from .verifier_bridge import verify
+    verify_response = verify(certificate_uid)
+    print(certificate_uid)
+    print(verify_response)
+    return render(request, 'dummy.html', {"context": verify_response})
 
 
 def intro(request):

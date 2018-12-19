@@ -29,3 +29,6 @@ class JsonCertificate (models.Model):
     issuerID = models.CharField(max_length=1000)
     json = models.FileField(null=True, blank=True)
 
+    def __str__(self):
+        return self.issuerID;
+
