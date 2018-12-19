@@ -21,7 +21,9 @@ def display_award(request, certificate_uid):
     # json_award = JsonCertificate.objects.get(issuerID=certificate_uid)
     # award = model.to_certificate_model(json_award.json)
 
-    # award =
+    from . import cert_store
+    award = cert_store.get_certificate(certificate_uid)
+    print(award)
     return render(request, 'award.html', {"award": award}) #award(certificate_uid))
 
 
