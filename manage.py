@@ -9,4 +9,10 @@ if __name__ == "__main__":
 
     from django.core.management import execute_from_command_line
 
+    from certviewer import configure_app
+    from certviewer.config import get_config
+    if sys.argv == ["manage.py", "runserver"]:
+        conf = get_config()
+        print(conf)
+        configure_app(conf)
     execute_from_command_line(sys.argv)
