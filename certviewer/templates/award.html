@@ -40,12 +40,16 @@
     <div class="verify">
         <p>This certificate was digitally signed by {{ award.organization }} and registered on the <span class="chain">{{ award.chain }}</span>
             blockchain.</p>
-        <button id="verify-button" value="{{ verification_info }}">Verify certificate</button>
+        <button id="verify-button" value="/verifier/{{certificate_uid}}">Verify certificate</button>
 
         <span id="verified" class="verified"><img id="verified-icon"  src="/static/img/verified.png"> Verified </span>
         <span id="not-verified" class="not-verified"><img id="not-verified-icon"
                                                           src="/static/img/not-verified.png "> Not Verified </span>
     </div>
+
+    <div  class="verification information">
+        <p>{{verification_info}}</p>>
+    </div>>
 
     <div>
         <h6 id="progress-msg"></h6>

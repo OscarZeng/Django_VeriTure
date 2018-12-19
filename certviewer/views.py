@@ -15,11 +15,13 @@ def homepage(request):
 
 
 def display_award(request, certificate_uid):
-    award = Certificate.objects.get(issuerID=certificate_uid)
-    print(certificate_uid)
-    #award(certificate_uid)
-    #json_award = JsonCertificate.objects.get(issuerID=certificate_uid)
-    #award = model.to_certificate_model(json_award.json)
+    # award = Certificate.objects.get(issuerID=certificate_uid)
+    # print(certificate_uid)
+
+    # json_award = JsonCertificate.objects.get(issuerID=certificate_uid)
+    # award = model.to_certificate_model(json_award.json)
+
+    # award =
     return render(request, 'award.html', {"award": award}) #award(certificate_uid))
 
 
@@ -38,8 +40,8 @@ def verify_award(request, certificate_uid):
     # print(award)
     # verify_response = verifier.verify_certificate(award)
     # print(certificate_uid)
-    # print(verify_response)
-    return render(request, 'award.html', {"verification_info": verify_response})
+    print(verify_response)
+    return render(request, 'verification.html', {"verification_info": verify_response, "certificate_uid": certificate_uid})
 
 
 def intro(request):

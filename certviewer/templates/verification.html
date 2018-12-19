@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Verify Certificates</title>
+
+    {% block css %}
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    {% endblock %}
+</head>
+
+
+<body>
+<h1>
+"Verification Infomation"
+</h1>
+
+<div class="cert_uid">
+    <h2>
+        "The certificate issuerID:" {{certificate_uid}}
+    </h2>
+</div>
+
+<div class="display checking info">
+{% for info in verification_info%}
+    <p>{{info.name}}</p>
+    <p>{{info.status}}</p>
+{% endfor %}
+</div>
+
+</body>
+</html>
