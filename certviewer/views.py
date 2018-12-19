@@ -31,9 +31,15 @@ def json_award(request):
 def verify_award(request, certificate_uid):
     from .verifier_bridge import verify
     verify_response = verify(certificate_uid)
-    print(certificate_uid)
-    print(verify_response)
-    return render(request, 'dummy.html', {"context": verify_response})
+    # from cert_verifier import verifier
+    # from cert_core.cert_model import model
+    # JsonAward = JsonCertificate.objects.get(issuerID=certificate_uid)
+    # award = model.to_certificate_model(JsonAward.json)
+    # print(award)
+    # verify_response = verifier.verify_certificate(award)
+    # print(certificate_uid)
+    # print(verify_response)
+    return render(request, 'award.html', {"verification_info": verify_response})
 
 
 def intro(request):

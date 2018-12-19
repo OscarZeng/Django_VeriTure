@@ -4,7 +4,6 @@ from cert_core import cert_store
 from . import certificate_formatter
 
 
-
 def award(certificate_uid):
     print ("certificate_store_bridge > award has been called.")
     requested_format = JsonCertificate.objects.get(issuerID=certificate_uid)
@@ -17,6 +16,6 @@ def award(certificate_uid):
 
 
 def get_award_json(certificate_uid):
-    print ("certificate_store_bridge > get_award_json has been called.")
+    print("certificate_store_bridge > get_award_json has been called.")
     certificate_json = cert_store.get_certificate_json(certificate_uid)
     return certificate_json
