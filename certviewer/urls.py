@@ -12,7 +12,7 @@ urlpatterns = [
 
     path('upload', views.upload, name='upload'),
 
-    path('verify/<certificate_uid>', views.verify_award, name='verify_award'),
+    # path('verify/<certificate_uid>', views.verify_award, name='verify_award'),
 
     # path('intro', views.intro, name='intro'),
 

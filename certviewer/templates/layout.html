@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 {% load static from staticfiles%}
 
 
@@ -16,7 +15,7 @@
 
         <!-- Favicon
         –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-        <link rel="shortcut icon" href=" {% static 'img/favicon.ico'%} ">
+        <link rel="shortcut icon" href=" {% static 'img/favicon.ico' %}">
 
         <!-- Title
         –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -28,11 +27,11 @@
         <!--<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">-->
             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
             <link rel=stylesheet type=text/css href="{% static 'css/style.css' %}">
-            <link rel=stylesheet type=text/css href="{% static 'css/faq.css' %}">
+
         {% endblock %}
 
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-        <script type="text/javascript" src="/static/js/verification.js"></script>
+        <script type="text/javascript" src="{% static 'js/verification.js' %}"></script>
 
     {% endblock %}
 
