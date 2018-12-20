@@ -1,4 +1,5 @@
 {% extends 'layout.html' %}
+{% load static from staticfiles%}
 
 {% block title %}
     Verified Certificate
@@ -38,10 +39,10 @@
         <p>This certificate was digitally signed by {{ award.organization }} and registered on the <span class="chain">{{ award.chain }}</span>
             blockchain.</p>
 
-        <button id="verify-button" value="{{ verification_info }}">Verify certificate</button>
-        <span id="verified" class="verified"><img id="verified-icon" src="{{ 'img/verified.png' }}"> Verified </span>
+        <button id="verify-button" value="{{ verification_info }}" onclick="document.write('Verify pop testing')">Verify certificate</button>
+        <span id="verified" class="verified"><img id="verified-icon" src="{% static 'img/verified.png' %}"> Verified </span>
         <span id="not-verified" class="not-verified"><img id="not-verified-icon"
-                                                          src="{{ 'img/not-verified.png' }}"> Not Verified </span>
+                                                          src="{% static 'img/not-verified.png' %}"> Not Verified </span>
     </div>
 
     <div>

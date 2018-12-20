@@ -5,8 +5,8 @@ PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir
 PACKAGE_ROOT = os.path.abspath(os.path.dirname(__file__))
 BASE_DIR = PACKAGE_ROOT
 
-CERT_ROOT = os.path.join(BASE_DIR, "cert")
-CERT_URL = '/cert/'
+CERT_ROOT = os.path.join(BASE_DIR, "cert_data")
+CERT_URL = '/cert_data/'
 
 DEBUG = True
 
@@ -69,7 +69,7 @@ STATIC_URL = "/site_media/static/"
 
 # Additional locations of static files
 STATICFILES_DIRS = [
-    os.path.join(PROJECT_ROOT, "static", "dist"),
+    os.path.join(PROJECT_ROOT, "static"),
 ]
 
 STATICFILES_STORAGE = "django.contrib.staticfiles.storage.ManifestStaticFilesStorage"
@@ -94,6 +94,7 @@ TEMPLATES = [
         "OPTIONS": {
             "debug": DEBUG,
             "context_processors": [
+
                 "django.contrib.auth.context_processors.auth",
                 "django.template.context_processors.debug",
                 "django.template.context_processors.i18n",

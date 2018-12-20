@@ -1,14 +1,17 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {% load static from staticfiles%}
     <meta charset="UTF-8">
     <title>Upload Certificates</title>
 </head>
 
 <body>
         {% block css %}
-        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel=stylesheet type=text/css href="{% static 'css/style.css' %}">
+        <link rel=stylesheet type=text/css href="{% static 'css/faq.css' %}">
         {% endblock %}
 <h1>
 Please Upload your certificate file here:
