@@ -3,6 +3,8 @@ from account.models import Account
 
 # Create your models here.
 
+# The certificate may be used to display the certificate in future. Feel free to delete it if it's not necessary.
+
 
 class Certificate (models.Model):
     account = models.ForeignKey(Account, on_delete=models.CASCADE)
