@@ -28,6 +28,7 @@ class Certificate (models.Model):
 
 
 class JsonCertificate (models.Model):
+    account = models.ForeignKey(Account, on_delete=models.CASCADE)
     issuerID = models.CharField(max_length=1000)
     json = models.FileField(null=True, blank=True)
 
