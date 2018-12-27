@@ -40,19 +40,19 @@
     <p></p>
     <p></p>
 
-    <div class="recently-uploaded">
-        {% if jsoncerts %}
-            <div class="recent-title">
-                <h1>Click the these below links to verify your certificates</h1>
-            </div>
-            {% for jsoncert_id in jsoncerts %}
-                <!--<a href="/{{ cert_id }}">{{ cert_id }}</a> <br>-->
-                {% if jsoncert_id.account.user == user %}
-                <a href="verify/{{ jsoncert_id.issuerID }}">{{ jsoncert_id }}</a> <br>
-                {% endif %}
-            {% endfor %}
-        {% endif %}
-    </div>
+    <!--<div class="recently-uploaded">-->
+        <!--{% if jsoncerts %}-->
+            <!--<div class="recent-title">-->
+                <!--<h1>Click the these below links to verify your certificates</h1>-->
+            <!--</div>-->
+            <!--{% for jsoncert_id in jsoncerts %}-->
+                <!--&lt;!&ndash;<a href="/{{ cert_id }}">{{ cert_id }}</a> <br>&ndash;&gt;-->
+                <!--{% if jsoncert_id.account.user == user %}-->
+                <!--<a href="verify/{{ jsoncert_id.issuerID }}">{{ jsoncert_id }}</a> <br>-->
+                <!--{% endif %}-->
+            <!--{% endfor %}-->
+        <!--{% endif %}-->
+    <!--</div>-->
 
     <p></p>
     <p></p>
