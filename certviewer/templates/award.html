@@ -1,4 +1,4 @@
-{% extends 'layout.html' %}
+<!--{% extends 'layout.html' %}-->
 {% load static from staticfiles%}
 
 {% block title %}
@@ -7,8 +7,11 @@
 
 {% block content %}
 
-        <script type="text/javascript" src="{% static 'js/verification.js' %}"></script>
+        <!--<script type="text/javascript" src="{% static 'js/verification.js' %}"></script>-->
+<script>
+    var uid = JSON.parse(data.replace(/'/g, '"')).uid;
 
+</script>
     <!-- Award -->
     {% block award %}
         <div class="user">
@@ -44,7 +47,7 @@
         <p>This certificate was digitally signed by {{ award.organization }} and registered on the <span class="chain">{{ award.chain }}</span>
             blockchain.</p>
 
-        <button id="verify-button" value="{{ verification_info }}" onclick="document.">Verify certificate</button>
+        <button id="verify-button" value="{{ verification_info }}" onclick="">Verify certificate</button>
         <span id="verified" class="verified"><img id="verified-icon" src="{% static 'img/verified.png' %}"> Verified </span>
         <span id="not-verified" class="not-verified"><img id="not-verified-icon"
                                                           src="{% static 'img/not-verified.png' %}"> Not Verified </span>
