@@ -3,9 +3,11 @@ By Zeng Hao (Oscar)
 	This file is written for the following developers of VeriTure, all the suggestions are based on my development experience and my personal understanding. 
 
 ### What is VeriTure
-	VeriTure is a platform that provides users with certificates related services. Registered users are able to upload certificates, view existing certificates, verify existing certificates and issue new certificates(issue new certificates is not available now). All the certificates are based on blockchain.
+VeriTure is a platform that provides users with certificates related services. Registered users are able to upload certificates, view existing certificates, verify existing certificates and issue new certificates(issue new certificates is not available now). All the certificates are based on blockchain.
+	
 ### Current Version
-	This is the very first version of VeriTure. This version only contains viewing certificates, uploading certificates and verifying certificates. The site is based on the Django framework and the basic language is python. This version only support those very basic features of VeriTure and may have 
+This is the very first version of VeriTure. This version only contains viewing certificates, uploading certificates and verifying certificates. The site is based on the Django framework and the basic language is python. This version only support those very basic features of VeriTure and may have 
+
 ## Develop Tips
 
 ### Development system: 
