@@ -7,15 +7,13 @@
 
 {% block content %}
 
-        <div class="issuer-logo">
-            <img src="https://dev.veritrue.io/_themes/default/img/veritrue_logo.png"/>
-        </div>
+        <h1>Welcome! {{user}}</h1>
 
         <div class="intro-title">
             <h1>{{ config.ISSUER_NAME }}</h1>
         </div>
 
-        <p class="mb-5 lead"> <a href="/certviewer/upload" class="btn btn-primary">Upload your Certificate</a></p>
+
 
         <div class="intro-text">
             The certificate viewer is the website for you to check all your existing
@@ -25,31 +23,44 @@
 
 
     <div class="recently-issued">
-        {% if certs %}
+        {% if jsoncerts %}
             <div class="recent-title">
                 <h1>Your Certificates</h1>
             </div>
             {% for cert_id in jsoncerts %}
                 <!--<a href="/{{ cert_id }}">{{ cert_id }}</a> <br>-->
+                <!--<p>{{cert_id.account}}{{user}} </p>-->
+                {% if cert_id.account.user == user %}
                 <a href="{{ cert_id.issuerID }}">{{ cert_id }}</a> <br>
-            {% endfor %}
+                {% endif %}
+        {% endfor %}
         {% endif %}
     </div>
 
     <p></p>
     <p></p>
 
-    <div class="recently-uploaded">
-        {% if jsoncerts %}
-            <div class="recent-title">
-                <h1>Click the these below links to verify your certificates</h1>
-            </div>
-            {% for jsoncert_id in jsoncerts %}
-                <!--<a href="/{{ cert_id }}">{{ cert_id }}</a> <br>-->
-                <a href="verify/{{ jsoncert_id.issuerID }}">{{ jsoncert_id }}</a> <br>
-            {% endfor %}
-        {% endif %}
-    </div>
+    <!--<div class="recently-uploaded">-->
+        <!--{% if jsoncerts %}-->
+            <!--<div class="recent-title">-->
+                <!--<h1>Click the these below links to verify your certificates</h1>-->
+            <!--</div>-->
+            <!--{% for jsoncert_id in jsoncerts %}-->
+                <!--&lt;!&ndash;<a href="/{{ cert_id }}">{{ cert_id }}</a> <br>&ndash;&gt;-->
+                <!--{% if jsoncert_id.account.user == user %}-->
+                <!--<a href="verify/{{ jsoncert_id.issuerID }}">{{ jsoncert_id }}</a> <br>-->
+                <!--{% endif %}-->
+            <!--{% endfor %}-->
+        <!--{% endif %}-->
+    <!--</div>-->
 
+    <p></p>
+    <p></p>
+
+    <p class="mb-5 lead"> <a href="/certviewer/upload" class="btn btn-primary">Upload your Certificate</a></p>
+
+    <div class="issuer-logo">
+            <img src="https://dev.veritrue.io/_themes/default/img/veritrue_logo.png"/>
+    </div>
 
 {% endblock %}

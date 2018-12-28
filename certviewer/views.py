@@ -5,8 +5,7 @@ from .models import Certificate
 from .models import JsonCertificate
 from .forms import JsonCertificateForm
 
-from cert_core.cert_model import model
-
+from .verifier_bridge import verify
 
 def homepage(request):
     all_certificates = Certificate.objects.all()
@@ -21,8 +20,11 @@ def display_award(request, certificate_uid):
 
     from certviewer.certificate_store_bridge import award
     Award = award(certificate_uid)
+    #verify_response = verify(certificate_uid)
+    all_certificates = Certificate.objects.all()
     print(Award)
-    return render(request, 'award.html', award(certificate_uid))#{"award": Award}) #award(certificate_uid))
+    return render(request, 'award.html', {"award": Award,
+                                          "certificate_uid": certificate_uid, 'certs': all_certificates}) #award(certificate_uid))
 
 
 def json_award(request):
@@ -31,7 +33,7 @@ def json_award(request):
 
 
 def verify_award(request, certificate_uid):
-    from .verifier_bridge import verify
+
     verify_response = verify(certificate_uid)
     # from cert_verifier import verifier
     # from cert_core.cert_model import model
