@@ -20,10 +20,10 @@ def display_award(request, certificate_uid):
 
     from certviewer.certificate_store_bridge import award
     Award = award(certificate_uid)
-    verify_response = verify(certificate_uid)
+    #verify_response = verify(certificate_uid)
     all_certificates = Certificate.objects.all()
     print(Award)
-    return render(request, 'award.html', {"award": Award, "verification_info": verify_response,
+    return render(request, 'award.html', {"award": Award,
                                           "certificate_uid": certificate_uid, 'certs': all_certificates}) #award(certificate_uid))
 
 
